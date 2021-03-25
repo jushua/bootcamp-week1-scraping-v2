@@ -238,13 +238,16 @@ const scanningProfiles = async () => {
 
     const listProfile = async () => {
         let results = document.getElementsByClassName('reusable-search__result-container');
-        for(let i = 0; i <= results.length; i++) {
+        console.log('numero de links:');
+        console.log(results.length);
+        for(let i = 1; i <= results.length; i++) {
             if(lastLink >= results.length-1){
                 lastLink = -1;
                 gotoNext();
             }
             else{
                 lastLink = lastLink + 1;
+                console.log(results[lastLink]);
                 if(results[lastLink]){
                     let a = results[lastLink].getElementsByClassName('linked-area')[0];
                     let initialLink = window.location.href;
